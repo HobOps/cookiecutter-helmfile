@@ -1,0 +1,19 @@
+version: v0.145.0
+dependencies:
+- name: cert-manager
+  repository: https://charts.jetstack.io
+  version: v1.9.1
+- name: cert-manager-clusterissuer
+  repository: https://hobops-helm-charts.storage.googleapis.com
+  version: 1.0.1
+- name: ingress-nginx
+  repository: https://kubernetes.github.io/ingress-nginx
+  version: 4.2.5
+- name: nginx
+  repository: https://charts.bitnami.com/bitnami
+  version: 13.2.4
+- name: redis
+  repository: https://charts.bitnami.com/bitnami
+  version: 17.1.4
+digest: sha256:30a249c2e794294fa198e9305853c80716a5f05313ee1205d6be751d9b0d68d4
+generated: "2022-09-07T22:53:50.843847-05:00"

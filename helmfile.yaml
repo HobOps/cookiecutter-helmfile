@@ -1,0 +1,8 @@
+# Load common sections for environments
+{{ readFile "include/common_environments.yaml" }}
+
+# Load releases
+{{ readFile "rendered/releases.yaml" }}
+
+# Load environments
+{{ readFile "environments/index.yaml" }}

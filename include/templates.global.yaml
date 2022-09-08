@@ -1,0 +1,37 @@
+# common templates
+templates:
+  default-global: &default-global
+  default-global-resources-veryhigh: &default-global-resources-veryhigh
+    resources:
+      limits:
+        cpu: "800m"
+        memory: "2048Mi"
+      requests:
+        cpu: "400m"
+        memory: "1024Mi"
+  default-global-resources-high: &default-global-resources-high
+    resources:
+      limits:
+        cpu: "400m"
+        memory: "1024Mi"
+      requests:
+        cpu: "200m"
+        memory: "768Mi"
+  default-global-resources-medium: &default-global-resources-medium
+    resources:
+      limits:
+        cpu: "200m"
+        memory: "1024Mi"
+      requests:
+        cpu: "100m"
+        memory: "512Mi"
+  default-global-resources-low: &default-global-resources-low
+    resources:
+      limits:
+        cpu: "100m"
+        memory: "512Mi"
+      requests:
+        cpu: "50m"
+        memory: "256Mi"
+  default-global-resources-nolimit: &default-global-resources-nolimit
+    resources: {}

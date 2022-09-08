@@ -1,0 +1,18 @@
+controller:
+  kind: Deployment
+#  nodeSelector:
+#    prod: "true"
+  resources:
+    limits:
+      cpu: 200m
+      memory: 512Mi
+    requests:
+      cpu: 50m
+      memory: 128Mi
+  service:
+    enabled: "true"
+  ingressClassResource:
+    name: {{cookiecutter.ingress_class_name}}
+  ingressClass: {{cookiecutter.ingress_class_name}}
+  admissionWebhooks:
+    timeoutSeconds: 30

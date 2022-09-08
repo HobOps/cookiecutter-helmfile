@@ -1,0 +1,48 @@
+repositories:
+- name: hobops
+  url: https://hobops-helm-charts.storage.googleapis.com
+- name: ingress-nginx
+  url: https://kubernetes.github.io/ingress-nginx
+- name: jetstack
+  url: https://charts.jetstack.io
+- name: bitnami
+  url: https://charts.bitnami.com/bitnami
+values:
+- cert-manager-clusterissuer:
+    enabled: false
+- cert-manager:
+    enabled: false
+- ingress-nginx:
+    enabled: false
+- nginx:
+    enabled: false
+- redis:
+    enabled: false
+releases:
+- name: cert-manager-clusterissuer
+  <<: *default
+  chart: hobops/cert-manager-clusterissuer
+  condition: cert-manager-clusterissuer.enabled
+  version: 1.0.1
+  needs:
+  - cert-manager
+- name: cert-manager
+  <<: *default
+  chart: jetstack/cert-manager
+  condition: cert-manager.enabled
+  version: v1.9.1
+- name: ingress-nginx
+  <<: *default
+  chart: ingress-nginx/ingress-nginx
+  condition: ingress-nginx.enabled
+  version: 4.2.5
+- name: nginx
+  <<: *default
+  chart: bitnami/nginx
+  condition: nginx.enabled
+  version: 13.2.4
+- name: redis
+  <<: *default
+  chart: bitnami/redis
+  condition: redis.enabled
+  version: 17.1.4

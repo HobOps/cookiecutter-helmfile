@@ -1,0 +1,20 @@
+common-library:
+  ClusterIssuer:
+    letsencrypt-prod:
+      email: {{cookiecutter.certbot_email}}
+      server: https://acme-v02.api.letsencrypt.org/directory
+      privateKeySecretRef:
+        name: clusterissuer-letsencrypt-prod-key
+      solvers:
+      - http01:
+          ingress:
+            class: {{cookiecutter.ingress_class_name}}
+    letsencrypt-staging:
+      email: {{cookiecutter.certbot_email}}
+      server: https://acme-staging-v02.api.letsencrypt.org/directory
+      privateKeySecretRef:
+        name: clusterissuer-letsencrypt-staging-key
+      solvers:
+      - http01:
+          ingress:
+            class: {{cookiecutter.ingress_class_name}}

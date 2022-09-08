@@ -1,0 +1,3 @@
+#controller:
+#  service:
+#    loadBalancerIP: "x.x.x.x"

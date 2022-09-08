@@ -1,0 +1,8 @@
+# Load common sections for clusters
+{{ readFile "include/common_clusters.yaml" }}
+
+# Load releases
+{{ readFile "rendered/releases.yaml" }}
+
+# Load clusters
+{{ readFile "clusters/index.yaml" }}
