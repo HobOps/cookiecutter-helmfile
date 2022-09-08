@@ -1,8 +1,13 @@
 {
+    "helmfile_dirname": "helmfile",
     "initial_cluster_name": "example-cluster",
     "initial_environment_name": "example-environment",
     "infrastructure_namespace": "infrastructure",
     "helm_charts_directory": "../helm/charts",
     "ingress_class_name": "nginx",
-    "certbot_email": "test@example.com"
+    "certbot_email": "test@example.com",
+    "_copy_without_render": [
+        "helmfile.yaml",
+        "clusters.yaml"
+    ]
 }

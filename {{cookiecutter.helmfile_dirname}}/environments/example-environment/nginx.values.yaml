@@ -1,0 +1,13 @@
+image:
+  registry: docker.io
+  repository: bitnami/nginx
+  tag: 1.23.1-debian-11-r18
+  digest: ""
+
+ingress:
+  enabled: true
+  hostname: nginx.example.com
+  path: /
+  annotations: {}
+  ingressClassName: "{{cookiecutter.ingress_class_name}}"
+  tls: false
