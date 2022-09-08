@@ -5,9 +5,5 @@
     "infrastructure_namespace": "infrastructure",
     "helm_charts_directory": "../helm/charts",
     "ingress_class_name": "nginx",
-    "certbot_email": "test@example.com",
-    "_copy_without_render": [
-        "helmfile.yaml",
-        "clusters.yaml"
-    ]
+    "certbot_email": "test@example.com"
 }

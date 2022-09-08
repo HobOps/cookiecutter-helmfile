@@ -6,14 +6,14 @@ templates:
     cleanupOnFail: true # cleans up any new resources created during a failed release
     values:
     - clusters/common/values.yaml
-    - clusters/common/{{ .Release.Name }}.values.yaml
-    - clusters/common/{{ .Release.Name }}.values.yaml.gotmpl
-    - clusters/{{ .Environment.Name }}/{{ .Release.Name }}.values.yaml
-    - clusters/{{ .Environment.Name }}/{{ .Release.Name }}.values.yaml.gotmpl
+    - clusters/common/{{ "{{" }} .Release.Name {{ "}}" }}.values.yaml
+    - clusters/common/{{ "{{" }} .Release.Name {{ "}}" }}.values.yaml.gotmpl
+    - clusters/{{ "{{" }} .Environment.Name {{ "}}" }}/{{ "{{" }} .Release.Name {{ "}}" }}.values.yaml
+    - clusters/{{ "{{" }} .Environment.Name {{ "}}" }}/{{ "{{" }} .Release.Name {{ "}}" }}.values.yaml.gotmpl
     secrets:
     - clusters/common/secrets.yaml
-    - clusters/common/{{ .Release.Name }}.secrets.yaml
-    - clusters/{{ .Environment.Name }}/{{ .Release.Name }}.secrets.yaml
+    - clusters/common/{{ "{{" }} .Release.Name {{ "}}" }}.secrets.yaml
+    - clusters/{{ "{{" }} .Environment.Name {{ "}}" }}/{{ "{{" }} .Release.Name {{ "}}" }}.secrets.yaml
 
 helmDefaults:
   skipDeps: true

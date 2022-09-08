@@ -1,17 +1,17 @@
 templates:
   default: &default
     createNamespace: true
-    namespace: "{{ .Environment.Name }}"
+    namespace: "{{ "{{" }} .Environment.Name {{ "}}" }}"
     missingFileHandler: Warn # Warn if values or secret files do not exist
     cleanupOnFail: true # cleans up any new resources created during a failed release
     values:
     - include/values.global.yaml.gotmpl
-    - environments/{{ .Environment.Name }}/values.yaml
-    - environments/{{ .Environment.Name }}/{{ .Release.Name }}.values.yaml
-    - environments/{{ .Environment.Name }}/{{ .Release.Name }}.values.yaml.gotmpl
+    - environments/{{ "{{" }} .Environment.Name {{ "}}" }}/values.yaml
+    - environments/{{ "{{" }} .Environment.Name {{ "}}" }}/{{ "{{" }} .Release.Name {{ "}}" }}.values.yaml
+    - environments/{{ "{{" }} .Environment.Name {{ "}}" }}/{{ "{{" }} .Release.Name {{ "}}" }}.values.yaml.gotmpl
     secrets:
-    - environments/{{ .Environment.Name }}/secrets.yaml
-    - environments/{{ .Environment.Name }}/{{ .Release.Name }}.secrets.yaml
+    - environments/{{ "{{" }} .Environment.Name {{ "}}" }}/secrets.yaml
+    - environments/{{ "{{" }} .Environment.Name {{ "}}" }}/{{ "{{" }} .Release.Name {{ "}}" }}.secrets.yaml
 
 helmDefaults:
   skipDeps: true
