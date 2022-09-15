@@ -2,7 +2,7 @@
 {{ "{{" }} readFile "include/common_environments.yaml" {{ "}}" }}
 
 # Load releases
-{{ "{{" }} readFile "rendered/releases.yaml" {{ "}}" }}
+{{ "{{" }} readFile "rendered/releases.yaml.gotmpl" {{ "}}" }}
 
 # Load environments
 {{ "{{" }} readFile "environments/index.yaml" {{ "}}" }}

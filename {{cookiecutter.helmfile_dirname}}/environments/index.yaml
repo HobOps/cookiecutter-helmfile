@@ -2,6 +2,7 @@ environments:
   {{cookiecutter.initial_environment_name}}:
     kubeContext: {{cookiecutter.initial_cluster_name}}
     values:
+#    - namespace: custom-namespace
     - app: nginx
     - env: dev
     - nginx: { enabled: true }

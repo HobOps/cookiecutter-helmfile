@@ -5,7 +5,7 @@ import tempfile
 import yaml
 
 #### Vars
-path_releases = 'rendered/releases.yaml'
+path_releases = 'rendered/releases.yaml.gotmpl'
 
 #### Functions
 def str_presenter(dumper, data):

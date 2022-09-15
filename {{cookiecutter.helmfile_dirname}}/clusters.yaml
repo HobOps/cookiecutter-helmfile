@@ -2,7 +2,7 @@
 {{ "{{" }} readFile "include/common_clusters.yaml" {{ "}}" }}
 
 # Load releases
-{{ "{{" }} readFile "rendered/releases.yaml" {{ "}}" }}
+{{ "{{" }} readFile "rendered/releases.yaml.gotmpl" {{ "}}" }}
 
 # Load clusters
 {{ "{{" }} readFile "clusters/index.yaml" {{ "}}" }}

@@ -1,7 +1,7 @@
 templates:
   default: &default
     createNamespace: true
-    namespace: {{cookiecutter.infrastructure_namespace}}
+    namespace: '{{ "{{" }} .Values | get "namespace" "{{cookiecutter.infrastructure_namespace}}" {{ "}}" }}'
     missingFileHandler: Warn # Warn if values or secret files do not exist
     cleanupOnFail: true # cleans up any new resources created during a failed release
     values:
