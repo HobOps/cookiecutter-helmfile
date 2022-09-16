@@ -10,6 +10,12 @@ cluster_apply:
 	fi
 	helmfile -i -e $(cluster) -f clusters.yaml apply
 
+cluster_diff:
+	@if [ -z $(cluster) ]; then\
+		echo "cluster is not defined"; exit 1;\
+	fi
+	helmfile -i -e $(cluster) -f clusters.yaml diff
+
 apply:
 	@if [ -z $(env) ]; then\
 		echo "env is not defined"; exit 1;\
@@ -28,6 +34,15 @@ sync:
 		helmfile -i -e $(env) sync;\
 	else\
 		helmfile -i -e $(env) -l name=$(name) sync;\
+
+diff:
+	@if [ -z $(env) ]; then\
+		echo "env is not defined"; exit 1;\
+	fi
+	@if [ -z $(name) ]; then\
+		helmfile -i -e $(env) diff;\
+	else\
+		helmfile -i -e $(env) -l name=$(name) diff;\
 	fi
 
 cluster_template:
