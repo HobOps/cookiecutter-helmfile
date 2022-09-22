@@ -21,9 +21,9 @@ apply:
 		echo "env is not defined"; exit 1;\
 	fi
 	@if [ -z $(name) ]; then\
-		helmfile -i -e $(env) apply;\
+		helmfile -i -e $(env) apply --show-secrets --suppress-secrets;\
 	else\
-		helmfile -i -e $(env) -l name=$(name) apply;\
+		helmfile -i -e $(env) -l name=$(name) apply --show-secrets --suppress-secrets;\
 	fi
 
 sync:
