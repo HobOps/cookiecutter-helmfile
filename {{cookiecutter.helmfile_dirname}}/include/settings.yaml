@@ -1,4 +1,4 @@
-chartsPath: {{cookiecutter.helm_charts_directory}}
+chartsPath: {{cookiecutter.helm_charts_directory}}\
 
 repositories:
   hobops: { url: https://hobops-helm-charts.storage.googleapis.com }
@@ -10,7 +10,7 @@ repositories:
 
 charts:
   # Infrastructure
-  cert-manager-clusterissuer: { chart: 'hobops/cert-manager-clusterissuer', version: '1.0.1', needs: [cert-manager] }
+  cert-manager-clusterissuer: { chart: 'hobops/cert-manager-clusterissuer', version: '1.0.1', needs: [cert-manager], disableValidation: true }
   cert-manager: { chart: 'jetstack/cert-manager', version: 'v1.9.1' }
   ingress-nginx: { chart: 'ingress-nginx/ingress-nginx', version: '4.2.5' }
   # Add new infrastructure charts in alphabetical order (Sublime/PyCharm can sort lines)

@@ -24,6 +24,7 @@ releases:
   chart: hobops/cert-manager-clusterissuer
   condition: cert-manager-clusterissuer.enabled
   version: 1.0.1
+  disableValidation: true
   needs:
   - cert-manager
 - name: cert-manager

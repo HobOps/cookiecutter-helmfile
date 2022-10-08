@@ -122,6 +122,11 @@ for key, value in settings['charts'].items():
         temp['namespace'] = value['namespace']
         print(f'namespace: {value["namespace"]}')
 
+    # disableValidation
+    if 'disableValidation' in value:
+        temp['disableValidation'] = value['disableValidation']
+        print(f'disableValidation: {value["disableValidation"]}')
+
     data['releases'].append(temp)
 
 
